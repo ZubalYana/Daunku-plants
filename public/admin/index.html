@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.js' integrity='sha512-pmaEGtUAy7E5gRmwjLqQAD/QWw0dL4Z59b6b+2HQkqQwQ+HcPLLb9/KbUNo5zr10WuXmbivK9nYVZOyDkMgZMg==' crossorigin='anonymous'></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.css' integrity='sha512-U9Y1sGB3sLIpZm3ePcrKbXVhXlnQNcuwGQJ2WjPjnp6XHqVTdgIlbaDzJXJIAuCTp3y22t+nhI4B88F/5ldjFA==' crossorigin='anonymous'/>
+</head>
+<body>
+    <div class="addNewPlantPopup_container">
+        <div class="addNewPlantPopup">
+            <i class="fa-solid fa-xmark" id="addNewPlantXmark"></i>
+
+            <div class="addNewPlantPopup_leftPart">
+                <h3>Add new plant to the catalog:</h3>
+                <div class="addNewPlantPopup_inputsContainer">
+                    <input type="text" placeholder="Image" id="plant_image">
+                    <input type="text" placeholder="Name" id="plant_name">
+                    <input type="text" placeholder="Rating" id="plant_rating">
+                    <input type="text" placeholder="Price ( $ )" id="plant_price">
+                    <div class="addNewPlant_btn">Add plant</div>
+                </div>
+            </div>
+            <div class="addNewPlantPopup_rightPart"></div>
+
+        </div>
+    </div>
+    <div class="editPlantPopup_container">
+        <div class="editPlantPopup">
+            <i class="fa-solid fa-xmark" id="editPlantPopupXmark"></i>
+                <h3>Edit the plant</h3>
+                <div class="editPlantPopup_inputsContainer">
+                    <input type="text" placeholder="New mage" id="newPlant_image">
+                    <input type="text" placeholder="New name" id="newPlant_name">
+                    <input type="text" placeholder="New rating" id="newPlant_rating">
+                    <input type="text" placeholder="New price ( $ )" id="newPlant_price">
+                    <div class="editPlant_btn">Add plant</div>
+                </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="header">
+            <div class="logo">
+                <img class="logo_img" src="./imgs/logo.png" alt="">Admin panel
+            </div>
+            <div class="nav">
+                <a href="#" class="navEl" id="plants">Plants</a>
+                <a href="#" class="navEl" id="orders">Orders</a>
+                <a href="#" class="navEl" id="contacts">Contacts</a>
+                <a href="#" class="navEl" id="newslatter">Newslatter</a>
+            </div>
+            <div class="theme">
+                <div class="theme_circle"></div>
+            </div>
+        </div>
+        <div class="content">
+        </div>
+    </div>
+
+
+
+    <script src="./main.js"></script>
+</body>
+</html>

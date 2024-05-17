@@ -1,0 +1,356 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Work Sans;
+}
+::-webkit-scrollbar {
+    width: 10px;
+ }
+::-webkit-scrollbar-track {
+     background: #828282;
+     border-radius: 8px;
+
+}
+::-webkit-scrollbar-thumb {
+     background: #566270;
+     border-radius: 8px;
+
+}
+::-webkit-scrollbar-thumb:hover {
+     background: #283444;
+}
+::selection{
+    background-color: #566270;
+    color: #fff;
+}
+.addNewPlantPopup_container{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: #28344485;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    .addNewPlantPopup{
+        width: 850px;
+        height: 410px;
+        background-color: #fff;
+        border-radius: 50px;
+        position: relative;
+        padding: 30px;
+        display: flex;
+        #addNewPlantXmark{
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        .addNewPlantPopup_leftPart{
+            width: 50%;
+            h3{
+                font-size: 24px;
+                font-weight: 600;
+            }
+            .addNewPlantPopup_inputsContainer{
+                width: 100%;
+                margin-top: 25px;
+                display: flex;
+                flex-direction: column;
+                input{
+                    width: 100%;
+                    height: 40px;
+                    border-radius: 10px;
+                    border: 1px #081323 solid;
+                    padding: 7px;
+                    margin-bottom: 15px;
+                }
+                .addNewPlant_btn{
+                    width: 200px;
+                    height: 50px;
+                    border-radius: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #081323;
+                    font-size: 24px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    border: 1px #081323 solid;
+                    margin-top: 15px;
+                    transition: 0.5s ease;
+                }
+                .addNewPlant_btn:hover{
+                    background-color: #081323;
+                    color: #fff;
+                }
+            }
+        }
+        .addNewPlantPopup_rightPart{
+            width: 50%;
+        }
+
+    }
+
+}
+.editPlantPopup_container{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: #28344485;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    .editPlantPopup{
+        width: 550px;
+        height: 410px;
+        background-color: #fff;
+        border-radius: 50px;
+        position: relative;
+        padding: 30px;
+        #editPlantPopupXmark{
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        h3{
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .editPlantPopup_inputsContainer{
+            width: 100%;
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            input{
+                width: 100%;
+                height: 40px;
+                border-radius: 10px;
+                border: 1px #081323 solid;
+                padding: 7px;
+                margin-bottom: 15px;
+            }
+            .editPlant_btn{
+                width: 200px;
+                height: 50px;
+                border-radius: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #081323;
+                font-size: 24px;
+                font-weight: 500;
+                cursor: pointer;
+                border: 1px #081323 solid;
+                margin-top: 15px;
+                transition: 0.5s ease;
+            }
+            .editPlant_btn:hover{
+                background-color: #081323;
+                color: #fff;
+            }
+        }
+    }
+
+}
+.wrap{
+    width: 100%;
+    height: 100vh;
+    padding: 40px 120px 40px 120px;
+    overflow: hidden;
+    .header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        .logo{
+            width: 245px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 32px;
+            font-weight: 700;
+            color: #566270;
+            .logo_img{
+                width: 38px;
+            }
+        }
+        .nav{
+            width: 534px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 400;
+            user-select: none;
+            .navEl{
+                color: #566270;
+                cursor: pointer;
+                text-decoration: none;
+
+            }
+            #plants{
+                font-weight: 600;
+            }
+        }
+        .theme{
+            width: 60px;
+            height: 30px;
+            border-radius: 20px;
+            background-color: #566270;
+            display: flex;
+            justify-content: flex-start;
+            cursor: pointer;
+            .theme_circle{
+                width: 30px;
+                height: 30px;
+                background-color: #fff;
+                border-radius: 50%;
+                border: 2px #566270 solid;
+            }
+        }
+    }
+    .content{
+        margin-top: 40px;
+        .plantsWrapper{
+            width: 100%;
+            display: flex;
+            .addNewPlantsBtn{
+                width: 230px;
+                height: 230px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 84px;
+                font-weight: 600;
+                color: #566270;
+                border: 2px #566270 solid;
+                border-radius: 20px;
+                background-color: #fff;
+                cursor: pointer;
+                user-select: none;
+                transition: 0.3s ease;
+            }
+            .addNewPlantsBtn:hover{
+                background-color: #566270;
+                color: #fff;
+            }
+            .plantslist{
+                width: 80%;
+                height: 72vh;
+                overflow-y: auto;
+                margin-left: 30px;
+                .plant{
+                    width: 98%;
+                    height: 80px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 6px 30px 6px 15px;
+                    border: #566270 2px solid;
+                    border-radius: 20px;
+                    margin-bottom: 20px;
+                    color: #566270;
+                    .plantImg{
+                        height: 60px;
+                    }
+                    .plantName{
+                        width: 200px;
+                        display: flex;
+                        justify-content: flex-start;
+                        font-weight: 600;
+                    }
+                    .plantPrice{
+                        font-size: 16px;
+                        font-weight: 700;
+                    }
+                    .plant_actions{
+                        width: 80px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        .plant_edit{
+                            width: 25px;
+                            height: 25px;
+                            cursor: pointer;
+                            img{
+                                width: 100%;
+                                transition: 0.4s ease;
+
+                            }
+                        }
+                        .plant_delete{
+                            cursor: pointer;
+                            width: 25px;
+                            height: 25px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: space-between;
+                            position: relative;
+                            .plant_delete_top{
+                                width: 90%;
+                                position: absolute;
+                                top: 0px;
+                                transition: 0.4s ease;
+                            }
+                            .plant_delete_bottom{
+                                width: 78%;
+                                position: absolute;
+                                bottom: 0px;
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+        .contactsWrapper{
+            color: #566270;
+            display: flex;
+            .contacts_leftPart{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                h2{
+                    font-size: 32px;
+                    font-weight: 600;
+                }
+                input{
+                    width: 500px;
+                    height: 40px;
+                    border-radius: 20px;
+                    border: 2px #566270 solid;
+                    padding: 10px;
+                    margin: 15px 0 0 0;
+                }
+                button{
+                    width: 220px;
+                    height: 70px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 21px;
+                    font-weight: 600;
+                    border-radius: 20px;
+                    border: #566270 2px solid;
+                    color: #566270;
+                    background-color: #fff;
+                    cursor: pointer;
+                    margin-top: 20px;
+                    transition: 0.5s ease;
+                }
+                button:hover{
+                    background-color: #566270;
+                    color: #fff;
+                }
+            }
+
+        }
+
+    }
+}

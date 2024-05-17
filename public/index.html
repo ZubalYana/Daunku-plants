@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daunku</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.js' integrity='sha512-pmaEGtUAy7E5gRmwjLqQAD/QWw0dL4Z59b6b+2HQkqQwQ+HcPLLb9/KbUNo5zr10WuXmbivK9nYVZOyDkMgZMg==' crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.css' integrity='sha512-U9Y1sGB3sLIpZm3ePcrKbXVhXlnQNcuwGQJ2WjPjnp6XHqVTdgIlbaDzJXJIAuCTp3y22t+nhI4B88F/5ldjFA==' crossorigin='anonymous'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css' integrity='sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==' crossorigin='anonymous'/>
+</head>
+<body>
+    <div class="cartPopupContainer">
+        <div class="cartPopup">
+            <i class="fa-solid fa-xmark xmark" id="cartPopup_xmark"></i>
+            <h1>You have chosen:</h1>
+            <div class="cartPopup_parts">
+                <div class="cartPopup_infoPart">
+                    <div class="chosenPlantsContainer"></div>
+                </div>
+                <div class="cartPopup_paymentContainer">
+                    <h3 id="chosenPlantCount"></h3>
+                    <h3 id="totalAmount"></h3>
+                    <h2>Buy just in 1 click! Pay with:</h2>
+                    <div class="paymentMethods">
+                        <img class="paymentMethod" src="./imgs/google-pay.png" alt="">
+                        <img class="paymentMethod" src="./imgs/apple-pay.png" alt="">
+                    </div>
+                    <h2>Or enter your data:</h2>
+                    <div class="inputsContainer">
+                        <input type="text" id="userName" placeholder="Name">
+                        <input type="text" id="userPhone" placeholder="Phone">
+                    </div>
+                    <input type="text" placeholder="Card Number">
+                    <div class="inputsContainer">
+                        <input type="text" id="expiryDate" placeholder="Expiry Date">
+                        <input type="text" id="securityCode" placeholder="Security Code">
+                    </div>
+                    <textarea type="text" placeholder="Message" id="userMessage">
+                    <div id="buyBtn">Buy now</div>
+                </div>
+            </div>
+
+        </div> 
+    </div>
+    <div class="cookiesPopupContainer">
+        <div class="cookiePopup">
+            <div class="cookiePopup_textCon">
+                <div class="cookiePopup_title">We use cookies to make your experience better</div>
+                <div class="cookiePopup_text">Cookies files will definitely improve your web page usage experience. We won’t provide your personal information to anyone. Your security is our treat here.</div>
+                <div class="cookiePopup_btn" id="acceptCookiesBtn">Accept all</div>
+            </div>
+            <div class="cookiePopup_picContainer">
+                <div class="cookiesJar_con">
+                    <img id="cookiesJar" src="./imgs/cookies jar.png" alt="">
+                    <img class="cookie" id="cookie1" src="./imgs/cookie 1.png" alt="">
+                    <img class="cookie" id="cookie2" src="./imgs/cookie 1.png" alt="">
+                    <img class="cookie" id="cookie3" src="./imgs/cookie 2.png" alt="">
+                    <img class="cookie" id="cookie4" src="./imgs/cookie 2.png" alt="">
+                    <img class="cookie" id="cookie5" src="./imgs/cookie 3.png" alt="">
+                    <img class="cookie" id="cookie6" src="./imgs/cookie 3.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="mainPage page">
+            <img class="mainPage_background" src="./imgs/main page background.png" alt="">
+            <div class="mainPage_header">
+                <div class="mainPage_logo">
+                    <img id="logo" src="./imgs/logo.png" alt="">Daunku
+                </div>
+                <div class="mainPage_nav">
+                    <a href="#" class="mainPage_navEl">Home</a>
+                    <a href="#" class="mainPage_navEl">Shop</a>
+                    <a href="#" class="mainPage_navEl">About Us</a>
+                    <a href="#" class="mainPage_navEl">Contact</a>
+                </div>
+                <div class="mainPage_cartThemeCon">
+                <div class="mainPage_cart">
+                    <img id="cart" src="./imgs/cart.png" alt="">
+                    <div class="mainPage_cartCounter">0</div>
+                </div>
+                <div class="mainPage_theme">
+                    <div class="mainPage_theme_circle"></div>
+                </div>
+            </div>
+            </div>
+            <div class="mainPage_content">
+                <div class="mainPage_title">Bring Serenity to Your Place <br>
+                    With Interior Plants</div>
+                <div class="mainPage_subtitle">find your dream plant for you home decoration <br> with us, and we will make it happen.</div>
+                <div class="mainPage_inputContainer">
+                    <input type="text" class="mainPage_searchInput" placeholder="Search plant">
+                    <div class="mainPage_searchBtn">
+                        <img class="mainPage_searchBtn_icon" src="./imgs/search.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="mainPage_blur"></div>
+        </div>
+        <div class="plants page" data-aos="fade-right" data-aos-duration="1000">
+            <div class="plants_abilities">
+                <div class="plants_ability">
+                    <img class="plants_abilityImg" src="./imgs/box.png" alt="">
+                    <div class="plants_abilityText">
+                        <div class="plants_abilityTitile">Free Shapping</div>
+                        <div class="plants_abilityDescription">No charge for each delivery</div>
+                    </div>
+                </div>
+                <div class="plants_ability">
+                    <img class="plants_abilityImg" src="./imgs/wallet.png" alt="">
+                    <div class="plants_abilityText">
+                        <div class="plants_abilityTitile">Quick Payment</div>
+                        <div class="plants_abilityDescription">100% secure payment</div>
+                    </div>
+                </div>
+                <div class="plants_ability">
+                    <img class="plants_abilityImg" src="./imgs/consultant.png" alt="">
+                    <div class="plants_abilityText">
+                        <div class="plants_abilityTitile">24/7 Support</div>
+                        <div class="plants_abilityDescription">Quick support</div>
+                    </div>
+                </div>
+            </div>
+            <div class="plants_basicContent">
+                <div class="plantsContainer_title">Best Seller Products:</div>
+                <div class="plantsContainer"></div>
+            </div>
+        </div>
+        <div class="addingMessage" data-aos="fade-right" data-aos-duration="1000">
+            Added to the cart!
+        </div>
+        <div class="interior page" data-aos="fade-right" data-aos-duration="1000">
+            <div class="interior_title">Interior Plant Reference</div>
+            <div class="interior_subtitle">make your home so comfortable with refreshing plants</div>
+            <div class="interior_Con">
+                <div class="interior_leftPart">
+                    <div class="room1Con">
+                        <img id="room1" src="./imgs/room 1.png" alt="">
+                        <div class="room1_cover">living room</div>
+                    </div>
+                    <div class="room2Con">
+                        <img id="room2" src="./imgs/room 2.png" alt="">
+                        <div class="room2_cover">office</div>
+                    </div>
+                </div>
+                <div class="interior_rightPart">
+                    <div class="room3Con">
+                        <img id="room3" src="./imgs/room 3.png" alt="">
+                        <div class="room3_cover">bedroom</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="care page" data-aos="fade-right" data-aos-duration="1000">
+            <div class="care_leftPart">
+                <div class="care_title">How to care for plants</div>
+                <div class="care_subtitle">Take care of plants with all your heart</div>
+                <div class="care_tips">
+                    <div class="care_tip">
+                        <img class="care_tipIcon" src="./imgs/sun.png" alt="">
+                        <div class="care_tipText">
+                            <div class="care_tipTitle">Adjust Lighting</div>
+                            <div class="care_tipDescription">When caring for indoor plants, make sure the room temperature is neither too cold nor too hot</div>
+                        </div>
+                    </div>
+                    <div class="care_tip">
+                        <img class="care_tipIcon" src="./imgs/water.png" alt="">
+                        <div class="care_tipText">
+                            <div class="care_tipTitle">Don't water too often</div>
+                            <div class="care_tipDescription">Watering ornamental plants indoors does not have to be done every day.</div>
+                        </div>
+                    </div>
+                    <div class="care_tip">
+                        <img class="care_tipIcon" src="./imgs/plant.png" alt="">
+                        <div class="care_tipText">
+                            <div class="care_tipTitle">Provide good soil</div>
+                            <div class="care_tipDescription">Watering ornamental plants indoors does not have to be done every day.</div>
+                        </div>
+                    </div>
+                    <div class="care_tip">
+                        <img class="care_tipIcon" src="./imgs/thermometer.png" alt="">
+                        <div class="care_tipText">
+                            <div class="care_tipTitle">Fertilize regularly</div>
+                            <div class="care_tipDescription">The nutrients most indoor houseplants need are nitrogen for balance and potassium for stem strength</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="care_rightPart">
+                <img class="care_img" src="./imgs/plants.png" alt="">
+            </div>
+        </div>
+        <div class="futer page" data-aos="fade-right" data-aos-duration="1000">
+            <div class="futer_content">
+                <div class="futer_newslatter">
+                    <div class="futer_newslatter_title">Newslatter</div>
+                    <div class="futer_newslatter_inputContainer">
+                        <input type="text" class="futer_newslatterInput" placeholder="Enter your email">
+                        <div class="futer_newslatter_InputBtn">Subscribe</div>
+                    </div>
+                </div>
+                <div class="futer_nav">
+                    <div class="futer_navEl">
+                        <div class="futer_navEl_title">Support</div>
+                        <div class="futer_navEl_option">About Us</div>
+                        <div class="futer_navEl_option">Careers</div>
+                        <div class="futer_navEl_option">Blog</div>
+                    </div>
+                    <div class="futer_navEl">
+                        <div class="futer_navEl_title">Useful Link</div>
+                        <div class="futer_navEl_option">Payment & Tax</div>
+                        <div class="futer_navEl_option">Team of service</div>
+                        <div class="futer_navEl_option">Privacy Policy</div>
+                    </div>
+                    <div class="futer_navEl">
+                        <div class="futer_navEl_title">Our Menu</div>
+                        <div class="futer_navEl_option">Best Product</div>
+                        <div class="futer_navEl_option">Category</div>
+                    </div>
+                    <div class="futer_navEl">
+                        <div class="futer_navEl_title">Address</div>
+                        <div class="futer_navEl_option" id="contacts_address"></div>
+                        <div class="futer_navEl_option" id="contacts_email"></div>
+                        <div class="futer_navEl_option" id="contacts_phone"></div>
+                    </div>
+                </div>
+            </div>
+            <hr class="futer_hr">
+            <div class="futer_privacyPolicy">© 2022 Daunku - All rights reserved.</div>
+
+        </div>
+    </div>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="./main.js"></script>
+</body>
+</html>
+
+
+
+
